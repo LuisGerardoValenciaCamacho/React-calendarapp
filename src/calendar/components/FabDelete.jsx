@@ -4,7 +4,7 @@ import { useCalendarStore } from '../../hooks'
 
 export const FabDelete = () => {
 
-    const { startDeleteEvent, hasActiveEvent } = useCalendarStore();
+    const { startDeleteEvent, hasActiveEvent, activeEvent } = useCalendarStore();
 
     const handlerDelete = () => {
         Swal.fire({
@@ -15,7 +15,7 @@ export const FabDelete = () => {
             denyButtonText: "Cancelar"
         }).then((result) => {
             if (result.isConfirmed) {
-                startDeleteEvent();
+                startDeleteEvent(activeEvent.id);
                 return;
             }
         });

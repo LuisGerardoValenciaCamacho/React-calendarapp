@@ -150,6 +150,17 @@ export const CalendarModal = () => {
                     ></textarea>
                     <small id="emailHelp" className="form-text text-muted">Información adicional</small>
                 </div>
+                <div className="form-group mb-2">
+                <label>Color</label>
+                    <input 
+                        type="color" 
+                        className={`form-control ${titleClass}`}
+                        name="bgColor"
+                        autoComplete="off"
+                        onChange={onInputChange}
+                        value={formValues.bgColor}
+                    />
+                </div>
                 <button
                     type="submit"
                     className="btn btn-outline-primary btn-block"

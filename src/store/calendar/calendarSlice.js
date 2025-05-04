@@ -32,7 +32,7 @@ export const calendarSlice = createSlice({
         },
         onUpdateEvent: (state, action) => {
             state.events = state.events.map(calendarEvent => {
-                if(calendarEvent._id === action.payload._id) {
+                if(calendarEvent.id === action.payload.id) {
                     return action.payload;
                 }
                 return calendarEvent;
@@ -40,10 +40,13 @@ export const calendarSlice = createSlice({
             state.activeEvent = null;
         },
         onDeleteEvent: (state) => {
-            state.events = state.events.filter(calendarEvent => calendarEvent._id !== state.activeEvent._id);
+            state.events = state.events.filter(calendarEvent => calendarEvent.id !== state.activeEvent.id);
             state.activeEvent = null;
+        },
+        onGetAllEvents: (state, action) => {
+            state.events = action.payload;
         }
     }
 });
 
-export const { events, activeEvent, onSetActiveEvent, onAddEvent, onUpdateEvent, onDeleteEvent } = calendarSlice.actions;
+export const { events, activeEvent, onSetActiveEvent, onAddEvent, onUpdateEvent, onDeleteEvent, onGetAllEvents } = calendarSlice.actions;

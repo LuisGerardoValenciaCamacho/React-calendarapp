@@ -1,5 +1,5 @@
 .login-container{
-    margin-top: 15%;
+    margin-top: 5%;
 }
 .login-form-1{
     border-radius: 5px;
@@ -21,7 +21,7 @@
     color: #fff;
 }
 .login-container form{
-    padding: 10%;
+    padding: 4% 10%;
 }
 .btnSubmit
 {
